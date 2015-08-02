@@ -1,6 +1,6 @@
 type project
 id ColorConsole
-version 0.1.0
+version 0.1.1
 description
     A very simple class library to aid in printing colored ouput to the console.
 authors
