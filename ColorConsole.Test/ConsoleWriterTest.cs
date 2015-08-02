@@ -30,7 +30,7 @@ namespace ColorConsole.Test
         }
 
         [Test]
-        public void ConsoleColors_AreNotModified_OnOrdinaryWrite()
+        public void ConsoleColors_AreNotModified_OnWriteWithNoColors()
         {
             writer.Write("How can I help you?");
             console.VerifySet(c => c.ForegroundColor = It.IsAny<ConsoleColor>(), Times.Never);
@@ -89,7 +89,7 @@ namespace ColorConsole.Test
         }
 
         [Test]
-        public void ConsoleWriteLine_IsInvoked_OnWriterWriteLine()
+        public void ConsoleWriteLine_IsInvoked_OnWriteLine()
         {
             string message = "message";
             writer.WriteLine(message);
@@ -102,6 +102,14 @@ namespace ColorConsole.Test
             writer.WriteLine("hello");
             console.VerifySet(c => c.ForegroundColor = It.IsAny<ConsoleColor>(), Times.Never);
             console.VerifySet(c => c.BackgroundColor = It.IsAny<ConsoleColor>(), Times.Never);
+        }
+
+        [Test]
+        public void ConsoleWriteLine_IsInvoked_OnWriteLineWithForegroundColor()
+        {
+            string message = "message";
+            writer.WriteLine(message, ConsoleColor.DarkBlue);
+            console.Verify(c => c.WriteLine(message), Times.Once);
         }
     }
 }

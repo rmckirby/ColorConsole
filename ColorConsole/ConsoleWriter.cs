@@ -42,7 +42,7 @@ namespace ColorConsole
 
         public void WriteLine(string message, ConsoleColor foreground)
         {
-
+            WriteWithForegroundColor(() => WriteLine(message), foreground);
         }
 
         public void WriteLine(string message, ConsoleColor foreground, ConsoleColor background)
