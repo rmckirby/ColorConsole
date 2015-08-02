@@ -37,7 +37,7 @@ namespace ColorConsole
 
         public void WriteLine(string message)
         {
-
+            console.WriteLine(message);
         }
 
         public void WriteLine(string message, ConsoleColor foreground)
