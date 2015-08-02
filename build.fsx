@@ -6,7 +6,7 @@ let buildDir = "./build/"
 let testDir  = "./test/"
 
 Target "Clean" (fun _ ->
-    CleanDirs [buildDir;]
+    CleanDirs [buildDir; testDir;]
 )
 
 Target "BuildCore" (fun _ ->
