@@ -30,7 +30,11 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+      <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="ConsoleWriterTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ColorConsole">
