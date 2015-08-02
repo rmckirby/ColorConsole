@@ -1,4 +1,5 @@
-# ColorConsole
+# ColorConsole 
+[![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/RMCKirby/ColorConsole/master/License.txt)
 
 
 A very simple class library to aid in printing coloured output to the console.
@@ -25,6 +26,11 @@ and invoke the method of your choice:
 console.Write("Be seeing you!", ConsoleColor.Yellow);
 ```
 
+#####Best Practices
+
+Ideally, you should rely on the `IConsoleWriter` type.
+This interface can then be used in conjunction with your favourite DI framework.
+
 #### Why?
 
 The main motivation was to reduce the typical boilerplate code involved to output colored text to the console.
@@ -48,4 +54,19 @@ mono .paket/paket.exe add nuget ColorConsole
 
 **Nuget**
 
-`Install-Package CommandLineParser`
+`Install-Package ColorConsole`
+
+#### To Build
+Acquire the source code.
+>Mono
+```
+mono .paket/paket.bootstapper.exe
+mono .paket/paket.exe restore
+bash build.sh
+```
+>.Net
+```
+.paket/paket.bootstapper.exe
+.paket/paket.exe restore
+packages/FAKE/tools/FAKE.exe build.fsx
+```
