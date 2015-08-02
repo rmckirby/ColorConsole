@@ -35,6 +35,7 @@
   <ItemGroup>
       <Compile Include="IConsoleWrapper.cs" />
       <Compile Include="IConsoleWriter.cs" />
+      <Compile Include="ConsoleWrapper.cs" />
       <Compile Include="ConsoleWriter.cs" />
       <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
