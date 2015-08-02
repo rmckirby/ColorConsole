@@ -2,7 +2,8 @@
 
 open Fake
 
-let buildDir  = "./build/"
+let buildDir = "./build/"
+let testDir  = "./test/"
 
 Target "Clean" (fun _ ->
     CleanDirs [buildDir;]
@@ -14,6 +15,11 @@ Target "BuildCore" (fun _ ->
         |> Log "BuildCore Output:"
 )
 
+Target "BuildTest" (fun _ ->
+    !! "ColorConsole.Test/ColorConsole.Test.csproj"
+        |> MSBuildDebug testDir "Build"
+        |> Log "BuildTest Output:"
+)
 
 Target "Default" (fun _ ->
     trace "ColorConsole"
@@ -21,6 +27,7 @@ Target "Default" (fun _ ->
 
 "Clean"
     ==> "BuildCore"
+    ==> "BuildTest"
     ==> "Default"
     
 RunTargetOrDefault "Default"
