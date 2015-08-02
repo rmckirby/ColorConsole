@@ -67,5 +67,25 @@ namespace ColorConsole.Test
             writer.Write(message, ConsoleColor.Blue, ConsoleColor.Red);
             console.Verify(c => c.Write(message), Times.Once);
         }
+
+        [Test]
+        public void ConsoleColors_AreModified_OnWriteWithForegroundAndBackgroundColors()
+        {
+            ConsoleColor foreColor = ConsoleColor.Cyan;
+            ConsoleColor backColor = ConsoleColor.Green;
+            writer.Write("We'll have no trouble here!", foreColor, backColor);
+
+            console.VerifySet(c => c.ForegroundColor = foreColor, Times.Once);
+            console.VerifySet(c => c.BackgroundColor = backColor, Times.Once);
+        }
+
+        [Test]
+        public void ConsoleColors_AreRestored_AfterModificationOnWrite()
+        {
+            writer.Write("I'll have you know", ConsoleColor.Yellow, ConsoleColor.Blue);
+
+            Assert.AreEqual(ConsoleColor.White, console.Object.ForegroundColor);
+            Assert.AreEqual(ConsoleColor.Black, console.Object.BackgroundColor);
+        }
     }
 }
