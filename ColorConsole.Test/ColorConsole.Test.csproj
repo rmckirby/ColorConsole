@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{8F9DC552-96D3-4DFC-8242-65A5FFBB352F}</ProjectGuid>
+    <ProjectGuid>{806922CE-C05E-4DCA-B98B-0964CD0AB416}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ColorConsole</RootNamespace>
-    <AssemblyName>ColorConsole</AssemblyName>
+    <RootNamespace>ColorConsole.Test</RootNamespace>
+    <AssemblyName>ColorConsole.Test</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>../build</OutputPath>
+    <OutputPath>../test</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -22,7 +22,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>../build</OutputPath>
+    <OutputPath>../test</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -30,8 +30,6 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-      <Compile Include="IConsoleWrapper.cs" />
-      <Compile Include="IConsoleWriter.cs" />
-      <Compile Include="ConsoleWriter.cs" />
+      <Compile Include="ConsoleWriterTest.cs" />
   </ItemGroup>
 </Project>
