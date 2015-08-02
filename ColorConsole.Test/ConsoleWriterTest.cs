@@ -71,12 +71,9 @@ namespace ColorConsole.Test
         [Test]
         public void ConsoleColors_AreModified_OnWriteWithForegroundAndBackgroundColors()
         {
-            ConsoleColor foreColor = ConsoleColor.Cyan;
-            ConsoleColor backColor = ConsoleColor.Green;
-            writer.Write("For local people", foreColor, backColor);
-
-            console.VerifySet(c => c.ForegroundColor = foreColor, Times.Once);
-            console.VerifySet(c => c.BackgroundColor = backColor, Times.Once);
+            AssertForegroundAndBackgroundColorsAreModified(
+                (foreColor, backColor) => writer.Write("For local people", foreColor, backColor)
+            );
         }
 
         [Test]
@@ -117,6 +114,17 @@ namespace ColorConsole.Test
             var color = ConsoleColor.Cyan;
             action.Invoke(color);
             console.VerifySet(c => c.ForegroundColor = color, Times.Once);
+        }
+
+        private void AssertForegroundAndBackgroundColorsAreModified(
+            Action<ConsoleColor, ConsoleColor> action)
+        {
+            var foreColor = ConsoleColor.Green;
+            var backColor = ConsoleColor.Yellow;
+            action(foreColor, backColor);
+
+            console.VerifySet(c => c.ForegroundColor = foreColor, Times.Once);
+            console.VerifySet(c => c.BackgroundColor = backColor, Times.Once);
         }
     }
 }
