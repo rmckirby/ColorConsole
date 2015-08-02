@@ -11,13 +11,13 @@ Target "Clean" (fun _ ->
 
 Target "BuildCore" (fun _ ->
     !! "ColorConsole/ColorConsole.csproj"
-        |> MSBuildDebug buildDir "Build"
+        |> MSBuildRelease buildDir "Build"
         |> Log "BuildCore Output:"
 )
 
 Target "BuildTest" (fun _ ->
     !! "ColorConsole.Test/ColorConsole.Test.csproj"
-        |> MSBuildDebug testDir "Build"
+        |> MSBuildRelease testDir "Build"
         |> Log "BuildTest Output:"
 )
 
