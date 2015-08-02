@@ -21,21 +21,21 @@ namespace ColorConsole
             console.Write(message);
         }
 
-        public void Write(string message, ConsoleColor foregroundColor)
+        public void Write(string message, ConsoleColor foreground)
         {
-            WriteWithForegroundColor(() => Write(message), foregroundColor);
+            WriteWithForegroundColor(() => Write(message), foreground);
         }
 
-        public void Write(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
+        public void Write(string message, ConsoleColor foreground, ConsoleColor background)
         {
-            ConsoleColor previousForeColor = console.ForegroundColor;
-            ConsoleColor previousBackColor = console.BackgroundColor;
+            ConsoleColor previousForeground = console.ForegroundColor;
+            ConsoleColor previousBackground = console.BackgroundColor;
 
-            SetForeGroundColor(foregroundColor);
-            SetBackGroundColor(backgroundColor);
+            SetForeGroundColor(foreground);
+            SetBackGroundColor(background);
             console.Write(message);
-            SetForeGroundColor(previousForeColor);
-            SetBackGroundColor(previousBackColor);
+            SetForeGroundColor(previousForeground);
+            SetBackGroundColor(previousBackground);
         }
 
         public void WriteLine(string message)
@@ -43,12 +43,12 @@ namespace ColorConsole
 
         }
 
-        public void WriteLine(string message, ConsoleColor foregroundColor)
+        public void WriteLine(string message, ConsoleColor foreground)
         {
 
         }
 
-        public void WriteLine(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
+        public void WriteLine(string message, ConsoleColor foreground, ConsoleColor background)
         {
 
         }
@@ -69,6 +69,14 @@ namespace ColorConsole
             SetForeGroundColor(color);
             write();
             SetForeGroundColor(previous);
+        }
+
+        private void WriteWithForegroundAndBackgroundColors(
+            Action write,
+            ConsoleColor foreground,
+            ConsoleColor background)
+        {
+            
         }
     }
 }
