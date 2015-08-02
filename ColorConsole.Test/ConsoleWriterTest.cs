@@ -30,11 +30,11 @@ namespace ColorConsole.Test
         }
 
         [Test]
-        public void ConsoleColor_IsNotModified_OnOrdinaryWrite()
+        public void ConsoleColors_AreNotModified_OnOrdinaryWrite()
         {
             writer.Write("How can I help you?");
-            console.VerifyGet(c => c.ForegroundColor, Times.Never);
-            console.VerifyGet(c => c.BackgroundColor, Times.Never);
+            console.VerifySet(c => c.ForegroundColor = It.IsAny<ConsoleColor>(), Times.Never);
+            console.VerifySet(c => c.BackgroundColor = It.IsAny<ConsoleColor>(), Times.Never);
         }
 
         [Test]
@@ -94,6 +94,14 @@ namespace ColorConsole.Test
             string message = "message";
             writer.WriteLine(message);
             console.Verify(c => c.WriteLine(message), Times.Once);
+        }
+
+        [Test]
+        public void ConsoleColors_AreNotModified_OnWriteLineWithNoColors()
+        {
+            writer.WriteLine("hello");
+            console.VerifySet(c => c.ForegroundColor = It.IsAny<ConsoleColor>(), Times.Never);
+            console.VerifySet(c => c.BackgroundColor = It.IsAny<ConsoleColor>(), Times.Never);
         }
     }
 }
