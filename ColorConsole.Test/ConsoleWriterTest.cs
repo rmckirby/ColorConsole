@@ -14,6 +14,10 @@ namespace ColorConsole.Test
         public void SetUp()
         {
             console = new Mock<IConsoleWrapper>();
+
+            console.SetupGet(c => c.ForegroundColor).Returns(ConsoleColor.White);
+            console.SetupGet(c => c.BackgroundColor).Returns(ConsoleColor.Black);
+
             writer = new ConsoleWriter(console.Object);
         }
 
@@ -39,6 +43,14 @@ namespace ColorConsole.Test
             string message = "Well, well...";
             writer.Write(message, ConsoleColor.Blue, ConsoleColor.Red);
             console.Verify(c => c.Write(message), Times.Once);
+        }
+
+        [Test]
+        public void ConsoleColor_IsNotModified_OnOrdinaryWrite()
+        {
+            writer.Write("What's going on here?");
+            console.VerifyGet(c => c.ForegroundColor, Times.Never);
+            console.VerifyGet(c => c.BackgroundColor, Times.Never);
         }
     }
 }

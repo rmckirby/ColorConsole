@@ -23,7 +23,10 @@ namespace ColorConsole
 
         public void Write(string message, ConsoleColor foregroundColor)
         {
+            ConsoleColor previous = console.ForegroundColor;
+            console.ForegroundColor = foregroundColor;
             console.Write(message);
+            console.ForegroundColor = previous;
         }
 
         public void Write(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
