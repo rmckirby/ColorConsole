@@ -124,6 +124,31 @@ namespace ColorConsole.Test
             Assert.AreEqual(ConsoleColor.White, console.Object.ForegroundColor);
         }
 
+        [Test]
+        public void ConsoleWriteLine_IsInvoked_OnWriteWithForegroundAndBackgroundColors()
+        {
+            string message = "message";
+            writer.WriteLine(message, ConsoleColor.Blue, ConsoleColor.Red);
+            console.Verify(c => c.WriteLine(message), Times.Once);
+        }
+
+        [Test]
+        public void ConsoleColors_AreModified_OnWriteLineWithForegroundAndBackgroundColors()
+        {
+            AssertForegroundAndBackgroundColorsAreModified(
+                (foreColor, backColor) => writer.WriteLine("message", foreColor, backColor)
+            );
+        }
+
+        [Test]
+        public void ConsoleColors_AreRestored_AfterModificationOnWriteLine()
+        {
+            writer.WriteLine("message", ConsoleColor.Yellow, ConsoleColor.Blue);
+
+            Assert.AreEqual(ConsoleColor.White, console.Object.ForegroundColor);
+            Assert.AreEqual(ConsoleColor.Black, console.Object.BackgroundColor);
+        }
+
         private void AssertForegroundColorIsModified(Action<ConsoleColor> action)
         {
             var color = ConsoleColor.Cyan;
