@@ -109,6 +109,21 @@ namespace ColorConsole.Test
             console.Verify(c => c.WriteLine(message), Times.Once);
         }
 
+        [Test]
+        public void ConsoleForegroundColor_IsModified_OnWriteLineWithForegroundColor()
+        {
+            AssertForegroundColorIsModified(
+                (color) => writer.WriteLine("We'll have no trouble here!", color)
+            );
+        }
+
+        [Test]
+        public void ConsoleForegroundColor_IsRestored_AfterModificationOnWriteLine()
+        {
+            writer.WriteLine("I'll have you know", ConsoleColor.Yellow);
+            Assert.AreEqual(ConsoleColor.White, console.Object.ForegroundColor);
+        }
+
         private void AssertForegroundColorIsModified(Action<ConsoleColor> action)
         {
             var color = ConsoleColor.Cyan;
