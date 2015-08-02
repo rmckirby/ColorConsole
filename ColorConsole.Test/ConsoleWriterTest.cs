@@ -48,9 +48,9 @@ namespace ColorConsole.Test
         [Test]
         public void ConsoleForegroundColor_IsModified_OnWriteWithForegroundColor()
         {
-            ConsoleColor color = ConsoleColor.Cyan;
-            writer.Write("We'll have no trouble here!", color);
-            console.VerifySet(c => c.ForegroundColor = color, Times.Once);
+            AssertForegroundColorIsModified(
+                (color) => writer.Write("We'll have no trouble here!", color)
+            );
         }
 
         [Test]
@@ -110,6 +110,13 @@ namespace ColorConsole.Test
             string message = "message";
             writer.WriteLine(message, ConsoleColor.DarkBlue);
             console.Verify(c => c.WriteLine(message), Times.Once);
+        }
+
+        private void AssertForegroundColorIsModified(Action<ConsoleColor> action)
+        {
+            var color = ConsoleColor.Cyan;
+            action.Invoke(color);
+            console.VerifySet(c => c.ForegroundColor = color, Times.Once);
         }
     }
 }
