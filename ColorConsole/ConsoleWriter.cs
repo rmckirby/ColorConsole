@@ -21,12 +21,12 @@ namespace ColorConsole
             console.Write(message);
         }
 
-        public void Write(string message, ConsoleColor foreGroundColor)
+        public void Write(string message, ConsoleColor foregroundColor)
         {
 
         }
 
-        public void Write(string message, ConsoleColor foreGroundColor, ConsoleColor backGroundColor)
+        public void Write(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
         {
 
         }
@@ -36,12 +36,12 @@ namespace ColorConsole
 
         }
 
-        public void WriteLine(string message, ConsoleColor foreGroundColor)
+        public void WriteLine(string message, ConsoleColor foregroundColor)
         {
 
         }
 
-        public void WriteLine(string message, ConsoleColor foreGroundColor, ConsoleColor backGroundColor)
+        public void WriteLine(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
         {
 
         }

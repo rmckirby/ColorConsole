@@ -1,5 +1,6 @@
 using Moq;
 using NUnit.Framework;
+using System;
 
 namespace ColorConsole.Test
 {
@@ -19,8 +20,16 @@ namespace ColorConsole.Test
         [Test]
         public void ConsoleWrite_IsInvoked_OnWriteWithNoColors()
         {
-            string message = "oh hai!";
+            string message = "hello...";
             writer.Write(message);
+            console.Verify(c => c.Write(message), Times.Once);
+        }
+
+        [Test]
+        public void ConsoleWrite_IsInvoked_OnWriteWithForegroundColor()
+        {
+            string message = "How can I help you?";
+            writer.Write(message, ConsoleColor.Blue);
             console.Verify(c => c.Write(message), Times.Once);
         }
     }
