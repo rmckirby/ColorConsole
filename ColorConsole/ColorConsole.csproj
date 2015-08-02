@@ -30,6 +30,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+      <Compile Include="IConsoleWrapper.cs" />
       <Compile Include="IConsoleWriter.cs" />
   </ItemGroup>
 </Project>
