@@ -1,4 +1,5 @@
-# ColorConsole
+# ColorConsole 
+[![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/RMCKirby/ColorConsole/master/License.txt)
 
 
 A very simple class library to aid in printing coloured output to the console.
