@@ -32,5 +32,13 @@ namespace ColorConsole.Test
             writer.Write(message, ConsoleColor.Blue);
             console.Verify(c => c.Write(message), Times.Once);
         }
+
+        [Test]
+        public void ConsoleWrite_IsInvoked_OnWriteWithForegroundAndBackgroundColors()
+        {
+            string message = "Well, well...";
+            writer.Write(message, ConsoleColor.Blue, ConsoleColor.Red);
+            console.Verify(c => c.Write(message), Times.Once);
+        }
     }
 }

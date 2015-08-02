@@ -28,7 +28,7 @@ namespace ColorConsole
 
         public void Write(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
         {
-
+            console.Write(message);
         }
 
         public void WriteLine(string message)
