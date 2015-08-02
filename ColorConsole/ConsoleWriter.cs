@@ -23,7 +23,7 @@ namespace ColorConsole
 
         public void Write(string message, ConsoleColor foregroundColor)
         {
-
+            console.Write(message);
         }
 
         public void Write(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
