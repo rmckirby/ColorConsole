@@ -1,0 +1,16 @@
+type file
+id ColorConsole
+version 0.1.0
+description
+    A very simple class library to aid in printing colored ouput to the console.
+authors
+    Richard Kirby
+summary
+    A very simple class library to aid in printing colored ouput to the console.
+licenseurl https://github.com/RMCKirby/ColorConsole/blob/master/License.txt
+projecturl https://github.com/RMCKirby/ColorConsole
+iconurl https://raw.githubusercontent.com/RMCKirby/ColorConsole/master/logo.png
+tags
+    nuget, console, color, colour, consolecolor, consolecolour, C#
+files
+    build ==> lib
