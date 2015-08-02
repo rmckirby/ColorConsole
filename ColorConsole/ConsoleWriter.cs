@@ -24,14 +24,21 @@ namespace ColorConsole
         public void Write(string message, ConsoleColor foregroundColor)
         {
             ConsoleColor previous = console.ForegroundColor;
-            console.ForegroundColor = foregroundColor;
+            SetForeGroundColor(foregroundColor);
             console.Write(message);
-            console.ForegroundColor = previous;
+            SetForeGroundColor(previous);
         }
 
         public void Write(string message, ConsoleColor foregroundColor, ConsoleColor backgroundColor)
         {
+            ConsoleColor previousForeColor = console.ForegroundColor;
+            ConsoleColor previousBackColor = console.BackgroundColor;
+
+            SetForeGroundColor(foregroundColor);
+            SetBackGroundColor(backgroundColor);
             console.Write(message);
+            SetForeGroundColor(previousForeColor);
+            SetBackGroundColor(previousBackColor);
         }
 
         public void WriteLine(string message)
@@ -51,12 +58,12 @@ namespace ColorConsole
 
         public void SetForeGroundColor(ConsoleColor color)
         {
-
+            console.ForegroundColor = color;
         }
 
         public void SetBackGroundColor(ConsoleColor color)
         {
-
+            console.BackgroundColor = color;
         }
     }
 }
