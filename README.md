@@ -48,4 +48,4 @@ mono .paket/paket.exe add nuget ColorConsole
 
 **Nuget**
 
-`Install-Package CommandLineParser`
+`Install-Package ColorConsole`
