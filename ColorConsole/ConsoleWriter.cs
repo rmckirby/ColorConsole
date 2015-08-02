@@ -7,8 +7,8 @@ namespace ColorConsole
         private readonly IConsoleWrapper console;
 
         public ConsoleWriter()
+            : this(new ConsoleWrapper())
         {
-
         }
 
         internal ConsoleWriter(IConsoleWrapper console)
