@@ -6,7 +6,7 @@ let buildDir = "./build/"
 let testDir  = "./test/"
 
 Target "Clean" (fun _ ->
-    CleanDirs [buildDir;]
+    CleanDirs [buildDir; testDir;]
 )
 
 Target "BuildCore" (fun _ ->
@@ -21,6 +21,16 @@ Target "BuildTest" (fun _ ->
         |> Log "BuildTest Output:"
 )
 
+Target "UnitTest" (fun _ ->
+    !! (testDir + "/ColorConsole.Test.dll")
+        |> NUnit (fun p ->
+            {p with
+                DisableShadowCopy = true;
+                ShowLabels = false;
+            }
+        )
+)
+
 Target "Default" (fun _ ->
     trace "ColorConsole"
 )
@@ -28,6 +38,7 @@ Target "Default" (fun _ ->
 "Clean"
     ==> "BuildCore"
     ==> "BuildTest"
+    ==> "UnitTest"
     ==> "Default"
     
 RunTargetOrDefault "Default"
