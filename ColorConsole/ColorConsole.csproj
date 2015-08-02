@@ -32,5 +32,6 @@
   <ItemGroup>
       <Compile Include="IConsoleWrapper.cs" />
       <Compile Include="IConsoleWriter.cs" />
+      <Compile Include="ConsoleWriter.cs" />
   </ItemGroup>
 </Project>
