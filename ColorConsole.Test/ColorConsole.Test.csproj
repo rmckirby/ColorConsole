@@ -33,6 +33,11 @@
     <Compile Include="ConsoleWriterTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ColorConsole">
+      <HintPath>..\build\ColorConsole.dll</HintPath>
+      <Private>True</Private>
+      <Paket>False</Paket>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
