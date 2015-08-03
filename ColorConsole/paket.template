@@ -12,5 +12,3 @@ projecturl https://github.com/RMCKirby/ColorConsole
 iconurl https://raw.githubusercontent.com/RMCKirby/ColorConsole/master/logo.png
 tags
     nuget, console, color, colour, consolecolor, consolecolour, C#
-files
-    ../build ==> lib
