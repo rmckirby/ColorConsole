@@ -1,6 +1,6 @@
 type project
 id ColorConsole
-version 0.1.1
+version 0.1.2
 description
     A very simple class library to aid in printing colored ouput to the console.
 authors
@@ -12,5 +12,3 @@ projecturl https://github.com/RMCKirby/ColorConsole
 iconurl https://raw.githubusercontent.com/RMCKirby/ColorConsole/master/logo.png
 tags
     nuget, console, color, colour, consolecolor, consolecolour, C#
-files
-    ../build ==> lib
