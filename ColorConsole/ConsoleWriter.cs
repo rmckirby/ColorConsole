@@ -16,6 +16,44 @@ namespace ColorConsole
             this.console = console;
         }
 
+        public void Write<T>(T message)
+        {
+            console.Write(message.ToString());
+        }
+
+        public void Write<T>(T message, ConsoleColor foreground)
+        {
+            WriteWithForegroundColor(() => Write<T>(message), foreground);
+        }
+
+        public void Write<T>(T message, ConsoleColor foreground, ConsoleColor background)
+        {
+            WriteWithForegroundAndBackgroundColors(
+                () => Write<T>(message),
+                foreground,
+                background
+            );
+        }
+
+        public void WriteLine<T>(T message)
+        {
+            console.WriteLine(message.ToString());
+        }
+
+        public void WriteLine<T>(T message, ConsoleColor foreground)
+        {
+            WriteWithForegroundColor(() => WriteLine<T>(message), foreground);
+        }
+
+        public void WriteLine<T>(T message, ConsoleColor foreground, ConsoleColor background)
+        {
+            WriteWithForegroundAndBackgroundColors(
+                () => WriteLine<T>(message),
+                foreground,
+                background
+            );
+        }
+
         public void Write(string message)
         {
             console.Write(message);
