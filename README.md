@@ -70,3 +70,6 @@ bash build.sh
 .paket/paket.exe restore
 packages/FAKE/tools/FAKE.exe build.fsx
 ```
+
+#### Credits
+Logo credit to [deadletterdesign](http://www.easyicon.net/language.en/1170663-terminal_flat_icon.html)
