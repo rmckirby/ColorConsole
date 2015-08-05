@@ -6,5 +6,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 **Features**
  - Added Generic Write overloads. These will completely replace the existing string overloads
  on the first MAJOR release.
+
 **Changes**
  - Obsoleted Write & WriteLine string overloads.
