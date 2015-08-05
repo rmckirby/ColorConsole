@@ -16,16 +16,57 @@ namespace ColorConsole
             this.console = console;
         }
 
+        public void Write<T>(T message)
+        {
+            console.Write(message.ToString());
+        }
+
+        public void Write<T>(T message, ConsoleColor foreground)
+        {
+            WriteWithForegroundColor(() => Write<T>(message), foreground);
+        }
+
+        public void Write<T>(T message, ConsoleColor foreground, ConsoleColor background)
+        {
+            WriteWithForegroundAndBackgroundColors(
+                () => Write<T>(message),
+                foreground,
+                background
+            );
+        }
+
+        public void WriteLine<T>(T message)
+        {
+            console.WriteLine(message.ToString());
+        }
+
+        public void WriteLine<T>(T message, ConsoleColor foreground)
+        {
+            WriteWithForegroundColor(() => WriteLine<T>(message), foreground);
+        }
+
+        public void WriteLine<T>(T message, ConsoleColor foreground, ConsoleColor background)
+        {
+            WriteWithForegroundAndBackgroundColors(
+                () => WriteLine<T>(message),
+                foreground,
+                background
+            );
+        }
+
+        [Obsolete("To be removed in the next major release.")]
         public void Write(string message)
         {
             console.Write(message);
         }
 
+        [Obsolete("To be removed in the next major release.")]
         public void Write(string message, ConsoleColor foreground)
         {
             WriteWithForegroundColor(() => Write(message), foreground);
         }
 
+        [Obsolete("To be removed in the next major release.")]
         public void Write(string message, ConsoleColor foreground, ConsoleColor background)
         {
             WriteWithForegroundAndBackgroundColors(
@@ -35,16 +76,19 @@ namespace ColorConsole
             );
         }
 
+        [Obsolete("To be removed in the next major release.")]
         public void WriteLine(string message)
         {
             console.WriteLine(message);
         }
 
+        [Obsolete("To be removed in the next major release.")]
         public void WriteLine(string message, ConsoleColor foreground)
         {
             WriteWithForegroundColor(() => WriteLine(message), foreground);
         }
 
+        [Obsolete("To be removed in the next major release.")]
         public void WriteLine(string message, ConsoleColor foreground, ConsoleColor background)
         {
             WriteWithForegroundAndBackgroundColors(

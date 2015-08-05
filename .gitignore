@@ -18,6 +18,7 @@ deploy/
 
 #vscode
 .settings
+.vs/
 
 #Paket
 paket.exe
