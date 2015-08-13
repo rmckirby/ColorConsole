@@ -9,3 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 **Changes**
  - Obsoleted Write & WriteLine string overloads.
+
+ ## [1.0.0] - 2015-13-08
+ **Changes**
+  - Removed Obsolete methods from `ConsoleWriter` and `IConsoleWriter`.
