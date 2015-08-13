@@ -2,4 +2,5 @@ using System.Reflection;
 
 [assembly: AssemblyTitle("ColorConsole.Test")]
 [assembly: AssemblyCopyright("Richard Kirby")]
-[assembly: AssemblyVersion("0.2.0")]
+[assembly: AssemblyVersion("1.0.0")]
+[assembly: AssemblyInformationalVersionAttribute("1.0.0")]
