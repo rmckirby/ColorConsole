@@ -11,4 +11,4 @@ licenseurl https://github.com/RMCKirby/ColorConsole/blob/master/License.txt
 projecturl https://github.com/RMCKirby/ColorConsole
 iconurl https://raw.githubusercontent.com/RMCKirby/ColorConsole/master/logo.png
 tags
-    nuget, console, color, colour, consolecolor, consolecolour, C#
+    nuget, console, Console, color, Color, colour, Colour, consolecolor, consolecolour, ConsoleColor, C#
