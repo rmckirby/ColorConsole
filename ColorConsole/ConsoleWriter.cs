@@ -54,50 +54,6 @@ namespace ColorConsole
             );
         }
 
-        [Obsolete("To be removed in the next major release.")]
-        public void Write(string message)
-        {
-            console.Write(message);
-        }
-
-        [Obsolete("To be removed in the next major release.")]
-        public void Write(string message, ConsoleColor foreground)
-        {
-            WriteWithForegroundColor(() => Write(message), foreground);
-        }
-
-        [Obsolete("To be removed in the next major release.")]
-        public void Write(string message, ConsoleColor foreground, ConsoleColor background)
-        {
-            WriteWithForegroundAndBackgroundColors(
-                () => Write(message),
-                foreground,
-                background
-            );
-        }
-
-        [Obsolete("To be removed in the next major release.")]
-        public void WriteLine(string message)
-        {
-            console.WriteLine(message);
-        }
-
-        [Obsolete("To be removed in the next major release.")]
-        public void WriteLine(string message, ConsoleColor foreground)
-        {
-            WriteWithForegroundColor(() => WriteLine(message), foreground);
-        }
-
-        [Obsolete("To be removed in the next major release.")]
-        public void WriteLine(string message, ConsoleColor foreground, ConsoleColor background)
-        {
-            WriteWithForegroundAndBackgroundColors(
-                () => WriteLine(message),
-                foreground,
-                background
-            );
-        }
-
         public void SetForeGroundColor(ConsoleColor color)
         {
             console.ForegroundColor = color;
