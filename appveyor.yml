@@ -1,5 +1,6 @@
 test: off
 version: "{build}"
+platform: x86
 configuration:
     - Debug
     - Release
