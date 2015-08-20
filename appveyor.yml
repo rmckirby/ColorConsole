@@ -6,6 +6,6 @@ configuration:
 init:
     - cmd: msbuild /version
 build:
-    project: project: C:\projects\colorconsole\ColorConsole\ColorConsole.sln
-build-script:
+    project: C:\projects\colorconsole\ColorConsole\ColorConsole.sln
+build_script:
     - cmd: build.cmd
