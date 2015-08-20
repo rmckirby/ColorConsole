@@ -1,0 +1,11 @@
+test: off
+version: "{build}"
+configuration:
+    - Debug
+    - Release
+init:
+    - cmd: msbuild /version
+build:
+    project: project: C:\projects\colorconsole\ColorConsole\ColorConsole.sln
+build-script:
+    - cmd: build.cmd
