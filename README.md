@@ -6,9 +6,10 @@ A very simple class library to aid in printing coloured output to the console.
 
 **Build Status**
 
-| master                                                                                                                   | develop            |
-|--------------------------------------------------------------------------------------------------------------------------|--------------------|
-| [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=master)](https://travis-ci.org/RMCKirby/ColorConsole) | [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=develop)](https://travis-ci.org/RMCKirby/ColorConsole) |
+|         |.Net   |Mono |
+|---------|:------:|:------:|
+| **master** | [![Build status](https://ci.appveyor.com/api/projects/status/1fu2fhe68rfm3mdn/branch/master?svg=true)](https://ci.appveyor.com/project/RMCKirby/colorconsole/branch/master)| [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=master)](https://travis-ci.org/RMCKirby/ColorConsole) | 
+| **develop** | [![Build status](https://ci.appveyor.com/api/projects/status/1fu2fhe68rfm3mdn/branch/master?svg=true)](https://ci.appveyor.com/project/RMCKirby/colorconsole/branch/develop) | [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=develop)](https://travis-ci.org/RMCKirby/ColorConsole) |
 
 #### How?
 
