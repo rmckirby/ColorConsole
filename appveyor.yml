@@ -1,0 +1,9 @@
+test: off
+version: "{build}"
+platform: Any CPU
+init:
+    - cmd: msbuild /version
+build:
+    project: C:\projects\colorconsole\ColorConsole\ColorConsole.sln
+build_script:
+    - cmd: build.cmd
