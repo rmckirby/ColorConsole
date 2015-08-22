@@ -18,6 +18,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
  **Changes**
  - Assembly is now targeted for any CPU rather than just x86.
 
- **Fixes**
+**Fixes**
  - Fixed issue with building on Windows under the .NET runtime. Moq was unable to mock internal interfaces
  despite the mocked assembly being visible to DynamicProxy. This was resolved by removing the DynamicProxy public key.
