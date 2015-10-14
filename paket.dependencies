@@ -1,6 +1,6 @@
 source https://nuget.org/api/v2
 
-nuget FAKE
-nuget Moq
-nuget NUnit
-nuget NUnit.Runners
+nuget FAKE ~> 4.0
+nuget Moq ~> 4.2
+nuget NUnit ~> 2.6
+nuget NUnit.Runners ~> 2.6
