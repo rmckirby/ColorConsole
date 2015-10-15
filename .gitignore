@@ -4,9 +4,11 @@ obj/
 build/
 test/
 deploy/
+reports/
 
 [Tt]est-results
 [Tt]est[Rr]esult*
+results*.xml
 
 #Preferences
 *.userprefs
