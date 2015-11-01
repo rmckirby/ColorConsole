@@ -10,6 +10,13 @@ let reportDir    = "./reports/"
 let coverageDir  = testDir + "coverage/"
 let coverageFile = coverageDir + "code-coverage.xml"
 
+let coreProject            = "ColorConsole/ColorConsole.csproj"
+let testProject            = "ColorConsole.Test/ColorConsole.Test.csproj"
+let integrationTestProject = "ColorConsole.Test.Integration/ColorConsole.Test.Integration.csproj"
+
+let coreProjects = [coreProject;]
+let testProjects = [testProject; integrationTestProject;]
+
 Target "Clean" (fun _ ->
     CleanDirs [buildDir; testDir;]
 )
@@ -19,16 +26,14 @@ Target "CreateDirs" (fun _ ->
     CreateDir reportDir
 )
 
-Target "BuildCore" (fun _ ->
-    !! "ColorConsole/ColorConsole.csproj"
-        |> MSBuildRelease buildDir "Build"
-        |> Log "BuildCore Output:"
+Target "Build_Core_Assemblies" (fun _ ->
+        MSBuildRelease buildDir "Build" coreProjects
+            |> Log "Build_Core_Assemblies Output:"
 )
 
-Target "BuildTest" (fun _ ->
-    !! "ColorConsole.Test/ColorConsole.Test.csproj"
-        |> MSBuildRelease testDir "Build"
-        |> Log "BuildTest Output:"
+Target "Build_Test_Assemblies" (fun _ ->
+        MSBuildRelease testDir "Build" testProjects
+            |> Log "Build_Test_Assemblies Output:"
 )
 
 Target "UnitTest" (fun _ ->
@@ -68,8 +73,8 @@ Target "Default" DoNothing
 
 "Clean"
     ==> "CreateDirs"
-    ==> "BuildCore"
-    ==> "BuildTest"
+    ==> "Build_Core_Assemblies"
+    ==> "Build_Test_Assemblies"
     =?> ("UnitTest", isMono)
     =?> ("UnitTest_WithCoverage", not isMono)
     =?> ("GenerateCoverageReport", not isMono)

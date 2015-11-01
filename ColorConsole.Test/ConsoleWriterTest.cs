@@ -30,6 +30,17 @@ namespace ColorConsole.Test
         }
 
         [Test]
+        public void Integration_Test_Sample()
+        {
+            var systemWriter = new System.IO.StringWriter();
+            Console.SetOut(systemWriter);
+
+            var testWriter = new ConsoleWriter();
+            testWriter.Write("hello");
+            Assert.AreEqual("hello", systemWriter.ToString());
+        }
+
+        [Test]
         public void ConsoleColors_AreNotModified_OnWriteWithNoColors()
         {
             writer.Write("How can I help you?");
