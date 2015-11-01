@@ -4,6 +4,7 @@ nuget FAKE ~> 4.0
 nuget Moq ~> 4.2
 nuget NUnit ~> 2.6
 nuget NUnit.Runners ~> 2.6
+nuget Shouldly ~> 2.6
 
 group Tools
     source https://nuget.org/api/v2

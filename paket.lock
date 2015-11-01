@@ -5,6 +5,7 @@ NUGET
     Moq (4.2.1507.118)
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)
+    Shouldly (2.6.0)
 
 GROUP Tools
 NUGET
