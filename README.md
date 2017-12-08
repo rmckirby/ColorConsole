@@ -1,4 +1,4 @@
-# ColorConsole 
+# ColorConsole
 [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/RMCKirby/ColorConsole/master/License.txt)
 
 
@@ -8,8 +8,8 @@ A very simple class library to aid in printing coloured output to the console.
 
 |         |.Net   |Mono |
 |---------|:------:|:------:|
-| **master** | [![Build status](https://ci.appveyor.com/api/projects/status/1fu2fhe68rfm3mdn/branch/master?svg=true)](https://ci.appveyor.com/project/RMCKirby/colorconsole/branch/master)| [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=master)](https://travis-ci.org/RMCKirby/ColorConsole) | 
-| **develop** | [![Build status](https://ci.appveyor.com/api/projects/status/1fu2fhe68rfm3mdn/branch/master?svg=true)](https://ci.appveyor.com/project/RMCKirby/colorconsole/branch/develop) | [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=develop)](https://travis-ci.org/RMCKirby/ColorConsole) |
+| **master** | [![Build status](https://ci.appveyor.com/api/projects/status/1fu2fhe68rfm3mdn/branch/master?svg=true)](https://ci.appveyor.com/project/RMCKirby/colorconsole/branch/master)| [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=master)](https://travis-ci.org/rmckirby/ColorConsole) |
+| **develop** | [![Build status](https://ci.appveyor.com/api/projects/status/1fu2fhe68rfm3mdn/branch/master?svg=true)](https://ci.appveyor.com/project/RMCKirby/colorconsole/branch/develop) | [![Build Status](https://travis-ci.org/RMCKirby/ColorConsole.svg?branch=develop)](https://travis-ci.org/rmckirby/ColorConsole) |
 
 #### How?
 
@@ -59,17 +59,12 @@ mono .paket/paket.exe add nuget ColorConsole
 
 #### To Build
 Acquire the source code.
->Mono
 ```
-mono .paket/paket.bootstapper.exe
-mono .paket/paket.exe restore
 bash build.sh
 ```
->.Net
+Or if you don't have access to a bash env:
 ```
-.paket/paket.bootstapper.exe
-.paket/paket.exe restore
-packages/FAKE/tools/FAKE.exe build.fsx
+build.cmd
 ```
 
 #### Credits
