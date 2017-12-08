@@ -27,7 +27,7 @@ and invoke the method of your choice:
 console.Write("Be seeing you!", ConsoleColor.Yellow);
 ```
 
-#####Best Practices
+##### Best Practices
 
 Ideally, you should rely on the `IConsoleWriter` type.
 This interface can then be used in conjunction with your favourite DI framework.
